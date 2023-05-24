@@ -31,7 +31,7 @@
     </a>
     <div id="main" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="/post">Post</a>
+            <a class="collapse-item" href="/data_dokter">Data Dokter</a>
             <a class="collapse-item" href="/data_pasien">Data Pasien</a>
             <a class="collapse-item" href="cards.html">Tag</a>
             
