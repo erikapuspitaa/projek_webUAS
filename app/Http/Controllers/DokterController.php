@@ -22,6 +22,7 @@ class DokterController extends Controller
      */
     public function create()
     {
+        return view('admin/data_dokter/index');
         //
     }
 
