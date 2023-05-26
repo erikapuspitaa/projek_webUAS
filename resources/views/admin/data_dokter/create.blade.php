@@ -2,7 +2,7 @@
 @section('title', 'Data Dokter')
 
 @section('content')
-  <!-- Page Heading COBAKK -->
+  <!-- Page Heading -->
   <h1 class="h3 mb-4 text-gray-800">Data Dokter</h1>
 
   <form action = "/data_pasien" method="POST">
