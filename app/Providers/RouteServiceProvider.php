@@ -12,6 +12,8 @@ class RouteServiceProvider extends ServiceProvider
 {
 
     public const CEKROLE = '/cek-role';
+    public const DOKTER = '/dashboard_dokter';
+    public const LOGIN = '/login';
      /**
      * The path to your application's "home" route.
      *

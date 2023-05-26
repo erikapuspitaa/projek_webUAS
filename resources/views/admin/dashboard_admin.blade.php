@@ -1,5 +1,5 @@
 @extends('sb-admin/app')
-@section('title', 'Dashboard')
+@section('title', 'Dashboard Admin')
 
 @section('content')
   <!-- Page Heading -->

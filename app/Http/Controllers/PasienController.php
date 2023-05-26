@@ -15,8 +15,16 @@ class PasienController extends Controller
 
     public function index()
     {
-        $data_pasien = Pasien::select('id', 'Patient_Name', 'Gender', 'Email_Address','Service', 'Doctor', 'Phone_Number') ->latest()->simplePaginate(5);
-        return view('admin/data_pasien/index', compact('data_pasien'));
+        // $data_pasien = Pasien::select('id', 'Patient_Name', 'Gender', 'Email_Address','Service', 'Doctor', 'Phone_Number') ->latest()->simplePaginate(5);
+         $data_pasien = Pasien::select('id', 'Patient_Name', 'Gender', 'Email_Address', 'Service', 'Doctor', 'Phone_Number')->latest()->simplePaginate(5);
+         return view('admin/data_pasien/index', compact('data_pasien'));
+        
+         $data_pasien = Pasien::join('model_has_roles', 'users.id', '=', 'model_has_roles.model_id')
+            ->where('role_id',2)
+            ->select('id', 'Patient_Name', 'Gender', 'Email_Address', 'Service', 'Doctor', 'Phone_Number')
+            ->paginate(5)
+            ->get();
+        
         
 
     }
@@ -45,7 +53,7 @@ class PasienController extends Controller
             'Service' => $request-> Service,
             'Doctor' => $request-> Doctor,
             'Phone_Number' => $request-> Phone_Number,
-        ])->assignRole('pasien');
+        ])->assignRole('admin');
 
         Alert::success('Sukses', 'Data berhasil ditambahkan');
         return redirect('/data_pasien');
@@ -54,6 +62,11 @@ class PasienController extends Controller
     public function edit($id){
         $data_pasien = Pasien::select('id', 'Patient_Name', 'Gender', 'Email_Address','Service', 'Doctor', 'Phone_Number')->whereId($id)->first();
         return view('admin/data_pasien/edit', compact('data_pasien'));
+
+        $data_pasien = Pasien::join('model_has_roles', 'users.id', '=', 'model_has_roles.model_id')
+        ->where('role_id',2)
+        ->select('id', 'Patient_Name', 'Gender', 'Email_Address', 'Service', 'Doctor', 'Phone_Number')
+        ->paginate(10);
     }
 
     public function update(Request $request, $id){

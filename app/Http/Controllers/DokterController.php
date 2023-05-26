@@ -15,6 +15,12 @@ class DokterController extends Controller
         $data_dokter = Dokter::select('id', 'Dokter_Name', 'Gender', 'Email_Address','Service', 'Phone_Number') ->paginate(10);
         return view('admin/data_dokter/index', compact('data_dokter'));
         //
+
+        $data_dokter = Dokter::join('model_has_roles', 'users.id', '=', 'model_has_roles.model_id')
+            ->where('role_id',3)
+            ->select('id', 'name', 'email')
+            ->paginate(10);
+
     }
 
     /**
