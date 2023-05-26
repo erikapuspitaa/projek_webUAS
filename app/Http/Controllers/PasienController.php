@@ -16,6 +16,7 @@ class PasienController extends Controller
     {
         $data_pasien = Pasien::select('id', 'Patient_Name', 'Gender', 'Email_Address','Service', 'Doctor', 'Phone_Number') ->latest()->simplePaginate(5);
         return view('admin/data_pasien/index', compact('data_pasien'));
+        
 
     }
 

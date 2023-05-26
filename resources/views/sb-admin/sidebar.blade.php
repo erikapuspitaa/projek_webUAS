@@ -11,12 +11,15 @@
 <!-- Divider -->
 <hr class="sidebar-divider my-0">
 
+@role('super-admin')
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
     <a class="nav-link" href="/dashboard_admin">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard Admin</span></a>
 </li>
+@endrole
+
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
@@ -28,8 +31,8 @@
 <!-- Divider -->
 <hr class="sidebar-divider">
 
-
-<!-- Nav Item - Pages Collapse Menu -->
+@role('super-admin')
+    <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#main"
         aria-expanded="true" aria-controls="main">
@@ -45,6 +48,7 @@
         </div>
     </div>
 </li>
+@endrole
 
 <!-- Nav Item - Utilities Collapse Menu -->
 <li class="nav-item">
