@@ -11,7 +11,7 @@
 <!-- Divider -->
 <hr class="sidebar-divider my-0">
 
-@role('super-admin')
+@role('admin')
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
     <a class="nav-link" href="/dashboard_admin">
@@ -31,7 +31,7 @@
 <!-- Divider -->
 <hr class="sidebar-divider">
 
-@role('super-admin')
+@role('admin')
     <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#main"

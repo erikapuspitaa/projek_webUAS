@@ -24,14 +24,14 @@ Route::get('/', function () {
 
 Route::get('/dashboard_admin', function () {
     return view('admin/dashboard_admin');
-})->middleware(['verified', 'role:super-admin' ]);
+})->middleware(['verified', 'role:admin']);
 
 
 Route::get('/dashboard', function () {
     return view('admin/dashboard');
 })->middleware(['verified'])->name('dashboard');
 
-Route::middleware(['verified', 'role:super-admin'])->group(function () {
+Route::middleware(['verified', 'role:admin'])->group(function () {
     Route::get('/data_pasien/{id}/konfirmasi',[PasienController::class, 'konfirmasi']);
     Route::get('/data_pasien/{id}/delete',[PasienController::class, 'delete']);
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pasien;
+use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class PasienController extends Controller
@@ -44,7 +45,7 @@ class PasienController extends Controller
             'Service' => $request-> Service,
             'Doctor' => $request-> Doctor,
             'Phone_Number' => $request-> Phone_Number,
-        ])->assignRole('admin');
+        ])->assignRole('pasien');
 
         Alert::success('Sukses', 'Data berhasil ditambahkan');
         return redirect('/data_pasien');
@@ -95,6 +96,8 @@ public function konfirmasi($id){
 }
 
 public function delete($id){
+    
+    DB::table('model_has_roles')->where('model_id', $id)->delete();
     Pasien::whereId($id)->delete();
 
     Alert::success('Sukses', 'Data berhasil dihapus');
