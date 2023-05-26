@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    /**
+
+    public const CEKROLE = '/cek-role';
+     /**
      * The path to your application's "home" route.
      *
      * Typically, users are redirected here after authentication.

@@ -20,14 +20,23 @@
 </li>
 @endrole
 
-
+@role('admin|pasien')
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
     <a class="nav-link" href="/dashboard">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard User</span></a>
 </li>
+@endrole
 
+@role('admin|dokter')
+<!-- Nav Item - Dashboard -->
+<li class="nav-item active">
+    <a class="nav-link" href="/dashboard_dokter">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Dashboard Dokter</span></a>
+</li>
+@endrole
 <!-- Divider -->
 <hr class="sidebar-divider">
 
@@ -43,13 +52,14 @@
         <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="/data_dokter">Data Dokter</a>
             <a class="collapse-item" href="/data_pasien">Data Pasien</a>
-            <a class="collapse-item" href="cards.html">Profile Admin</a>
+            <a class="collapse-item" href="cards.html">Data Admin</a>
             
         </div>
     </div>
 </li>
 @endrole
 
+@role('admin|pasien')
 <!-- Nav Item - Utilities Collapse Menu -->
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pengaturan"
@@ -60,12 +70,32 @@
     <div id="pengaturan" class="collapse" aria-labelledby="headingUtilities"
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="utilities-color.html">Profile Admin</a>
+            <a class="collapse-item" href="utilities-color.html">Profile Pasien</a>
             <a class="collapse-item" href="utilities-border.html">Footer</a>
             <a class="collapse-item" href="/profile_user">Tentang Kami</a>
         </div>
     </div>
 </li>
+@endrole
+
+@role('admin|dokter')
+<!-- Nav Item - Utilities Collapse Menu -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pengaturan"
+        aria-expanded="true" aria-controls="pengaturan">
+        <i class="fas fa-fw fa-wrench"></i>
+        <span>Dokter</span>
+    </a>
+    <div id="pengaturan" class="collapse" aria-labelledby="headingUtilities"
+        data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="utilities-color.html">Profile Dokter</a>
+            <a class="collapse-item" href="utilities-border.html">Footer</a>
+            <a class="collapse-item" href="/profile_user">Tentang Kami</a>
+        </div>
+    </div>
+</li>
+@endrole
 
 
 <!-- Divider -->
