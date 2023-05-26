@@ -21,9 +21,9 @@ Auth::routes(['verify' => true]);
 
 Route::get('/cek-role', function(){
     if (auth()->user()->hasRole(['admin', 'pasien', 'dokter'])){
-        redirect('/dashboard');
+        return redirect('/dashboard');
     }else{
-        redirect('/');
+        return redirect('/');
 
     }
 });
