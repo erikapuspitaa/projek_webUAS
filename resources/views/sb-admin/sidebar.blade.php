@@ -16,7 +16,7 @@
 <li class="nav-item active">
     <a class="nav-link" href="/dashboard_admin">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboar Admin</span></a>
+        <span>Dashboard Admin</span></a>
 </li>
 @endrole
 
