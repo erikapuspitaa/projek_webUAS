@@ -2,9 +2,9 @@
 
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-    <div class="sidebar-brand-icon rotate-n-15">
+    <!-- <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
-    </div>
+    </div> -->
     <div class="sidebar-brand-text mx-3">DentCare</div>
 </a>
 
@@ -13,9 +13,16 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
+    <a class="nav-link" href="/dashboard_admin">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Dashboard Admin</span></a>
+</li>
+
+<!-- Nav Item - Dashboard -->
+<li class="nav-item active">
     <a class="nav-link" href="/dashboard">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span></a>
+        <span>Dashboard User</span></a>
 </li>
 
 <!-- Divider -->
@@ -27,13 +34,13 @@
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#main"
         aria-expanded="true" aria-controls="main">
         <i class="fas fa-fw fa-folder"></i>
-        <span>Main</span>
+        <span>Admin</span>
     </a>
     <div id="main" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="/data_dokter">Data Dokter</a>
             <a class="collapse-item" href="/data_pasien">Data Pasien</a>
-            <a class="collapse-item" href="cards.html">Tag</a>
+            <a class="collapse-item" href="cards.html">Profile Admin</a>
             
         </div>
     </div>
@@ -44,14 +51,14 @@
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pengaturan"
         aria-expanded="true" aria-controls="pengaturan">
         <i class="fas fa-fw fa-wrench"></i>
-        <span>Pengaturan</span>
+        <span>User</span>
     </a>
     <div id="pengaturan" class="collapse" aria-labelledby="headingUtilities"
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="utilities-color.html">Logo</a>
+            <a class="collapse-item" href="utilities-color.html">Profile Admin</a>
             <a class="collapse-item" href="utilities-border.html">Footer</a>
-            <a class="collapse-item" href="utilities-animation.html">Tentang Kami</a>
+            <a class="collapse-item" href="/profile_user">Tentang Kami</a>
         </div>
     </div>
 </li>

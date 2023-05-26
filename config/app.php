@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 RealRashid\SweetAlert\SweetAlertServiceProvider::class;
+Spatie\Permission\PermissionServiceProvider::class;
 
 return [
 

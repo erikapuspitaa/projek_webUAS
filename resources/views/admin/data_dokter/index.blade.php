@@ -9,7 +9,7 @@
 
   <a href="/data_pasien/create" class = "btn btn-primary btn-sm">+ Tambah Pasien</a>
 
- @if ($post[0])
+ @if($data_dokter[0])
  {{-- table --}}
 
 <table class="table mt-4 table-hover table-bordered">
@@ -51,9 +51,10 @@
 </table>
 
 {{$data_dokter->links()}}
+ 
  @else
- <div class="alert alert-info mr-4" role="alert">
+ <div class="alert alert-info mt-4" role="alert">
   Anda belum mempunyai data
  </div>
-
-@endsection
+ @endif
+ @endsection
