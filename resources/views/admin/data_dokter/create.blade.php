@@ -5,18 +5,24 @@
   <!-- Page Heading COBAKK -->
   <h1 class="h3 mb-4 text-gray-800">Data Dokter</h1>
 
-  <form action = "/data_pasien" method="POST">
+  <form action = "/data_dokter" method="POST">
             @csrf
             <div class="mb-3">
               <label for="exampleInputEmail1">Nama Dokter</label>
-              <input type="text" class="form-control" id="Dokter_Name" name="Dokter_Name">
+              <select class="form-control" id="Dokter_Name" name="Dokter_Name" value="{{old('Dokter_Name')}}">
+                <option selected disabled>Pilih Dokter</option>
+                <option>drg. Rendi Firmono, MARS, Sp.Perio</option>
+                <option>drg. Ken Ayu Miranthy, Sp.BMo</option>
+                <option>drg. Inge Paramitha, Sp.Pros</option>
+                <option>drg. Rani Isfandira, Sp.KG</option>
+              </select>
               @error('Dokter_Name')
                     <small class="text-danger">{{ $message }}</small>
-                    @enderror
+               @enderror
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1">Jenis Kelamin</label>
-              <select class="form-control" id="Gender" name="Gender">
+              <select class="form-control" id="Gender" name="Gender" value="{{old('Gender')}}">
                 <option selected disabled>Pilih Jenis Kelamin</option>
                 <option>Male</option>
                 <option>Female</option>
@@ -27,14 +33,14 @@
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1">Email</label>
-              <input type="email" class="form-control" id="Email_Address" name="Email_Address" placeholder="name@example.com">
+              <input type="email" class="form-control" id="Email_Address" name="Email_Address" placeholder="name@example.com" value="{{old('Email_Address')}}">
               @error('Email_Address')
                     <small class="text-danger">{{ $message }}</small>
                     @enderror
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1">Layanan</label>
-              <select class="form-control" id="Service" name="Service">
+              <select class="form-control" id="Service" name="Service" value="{{old('Service')}}">
                 <option selected disabled>Pilih Layanan</option>
                 <option>Gum-Lifting</option>
                 <option>Bleaching (Teeth Whitening)</option>
@@ -50,13 +56,13 @@
             
             <div class="mb-3">
               <label for="exampleInputEmail1">Nomor Telepon</label>
-              <input type="number" class="form-control" id="Phone_Number" name="Phone_Number" placeholder="628xxxxx">
+              <input type="number" class="form-control" id="Phone_Number" name="Phone_Number" placeholder="628xxxxx" value="{{old('Phone_Number')}}">
               @error('Phone_Number')
                     <small class="text-danger">{{ $message }}</small>
                     @enderror
             </div>
             <button type="submit" class="btn btn-primary btn-sm">Tambah</button>
-            <a href="/data_pasien" class="btn btn-secondary btn-sm">Kembali</a>
+            <a href="/data_dokter" class="btn btn-secondary btn-sm">Kembali</a>
             </form>
             @endsection
             <!-- <div class="mb-3">

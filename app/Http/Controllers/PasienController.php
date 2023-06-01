@@ -53,7 +53,7 @@ class PasienController extends Controller
             'Service' => $request-> Service,
             'Doctor' => $request-> Doctor,
             'Phone_Number' => $request-> Phone_Number,
-        ])->assignRole('admin');
+        ]);
 
         Alert::success('Sukses', 'Data berhasil ditambahkan');
         return redirect('/data_pasien');

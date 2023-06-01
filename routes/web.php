@@ -46,6 +46,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/data_pasien/{id}/konfirmasi',[PasienController::class, 'konfirmasi']);
+    Route::get('/data_dokter/{id}/konfirmasi',[DokterController::class, 'konfirmasi']);
     Route::get('/data_pasien/{id}/delete',[PasienController::class, 'delete']);
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     

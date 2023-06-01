@@ -1,40 +1,48 @@
 @extends('sb-admin/app')
-@section('title', 'Data Pasien')
+@section('title', 'Data Dokter')
 
 @section('content')
-  <!-- Page Heading -->
-  <h1 class="h3 mb-4 text-gray-800">Data Pasien</h1>
+  <!-- Page Heading COBAKK -->
+  <h1 class="h3 mb-4 text-gray-800">Data Dokter</h1>
 
-  <form action = "/data_pasien" method="POST">
+  <form action = "/data_dokter/{{$data_dokter->id}}" method="POST" enctype="multipart/
+  ">
             @csrf
+            @method('PATCH')
             <div class="mb-3">
-              <label for="exampleInputEmail1">Nama Pasien</label>
-              <input type="text" class="form-control" id="Patient_Name" name="Patient_Name">
-              @error('Patient_Name')
+              <label for="Dokter_Name">Nama Dokter</label>
+              <select class="form-control" id="Dokter_Name" name="Dokter_Name" value="{{old('Dokter_Name') ? old('Dokter_Name') : $data_dokter->Dokter_Name}}">
+                <option selected disabled>Pilih Dokter</option>
+                <option>drg. Rendi Firmono, MARS, Sp.Perio</option>
+                <option>drg. Ken Ayu Miranthy, Sp.BMo</option>
+                <option>drg. Inge Paramitha, Sp.Pros</option>
+                <option>drg. Rani Isfandira, Sp.KG</option>
+              </select>
+              @error('Dokter_Name')
                     <small class="text-danger">{{ $message }}</small>
-                    @enderror
+               @enderror
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1">Jenis Kelamin</label>
-              <select class="form-control" id="Gender" name="Gender">
+              <select class="form-control" id="Gender" name="Gender" value="{{old('Gender')}}">
                 <option selected disabled>Pilih Jenis Kelamin</option>
-                <option>Laki laki</option>
-                <option>Perempuan</option>
+                <option>Male</option>
+                <option>Female</option>
               </select>
               @error('Gender')
                     <small class="text-danger">{{ $message }}</small>
                      @enderror
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1">Email</label>
-              <input type="email" class="form-control" id="Email_Address" name="Email_Address" placeholder="name@example.com">
+              <label for="Email_Address">Email</label>
+              <input type="email" class="form-control" id="Email_Address" name="Email_Address" placeholder="Email_Address" value="{{old('Email_Address')? old('Email_Address') : $data_dokter->Email_Address}}">
               @error('Email_Address')
                     <small class="text-danger">{{ $message }}</small>
                     @enderror
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1">Layanan</label>
-              <select class="form-control" id="Service" name="Service">
+              <select class="form-control" id="Service" name="Service" value="{{old('Service')}}">
                 <option selected disabled>Pilih Layanan</option>
                 <option>Gum-Lifting</option>
                 <option>Bleaching (Teeth Whitening)</option>
@@ -47,28 +55,16 @@
                     <small class="text-danger">{{ $message }}</small>
                     @enderror
             </div>
+            
             <div class="mb-3">
-              <label for="exampleInputEmail1">Dokter</label>
-              <select class="form-control" id="Doctor" name="Doctor">
-                <option selected disabled>Pilih Dokter</option>
-                <option>drg. Rendi Firmono, MARS, Sp.Perio</option>
-                <option>drg. Ken Ayu Miranthy, Sp.BMo</option>
-                <option>drg. Inge Paramitha, Sp.Pros</option>
-                <option>drg. Rani Isfandira, Sp.KG</option>
-              </select>
-              @error('Doctor')
-                    <small class="text-danger">{{ $message }}</small>
-                    @enderror
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1">Nomor Telepon</label>
-              <input type="number" class="form-control" id="Phone_Number" name="Phone_Number" placeholder="628xxxxx">
+              <label for="Phone_Number">Nomor Telepon</label>
+              <input type="number" class="form-control" id="Phone_Number" name="Phone_Number" placeholder="628xxxxx" value="{{old('Phone_Number')? old('Phone_Number') : $data_dokter->Phone_Number}}">
               @error('Phone_Number')
                     <small class="text-danger">{{ $message }}</small>
                     @enderror
             </div>
-            <button type="submit" class="btn btn-primary btn-sm">Tambah</button>
-            <a href="/data_pasien" class="btn btn-secondary btn-sm">Kembali</a>
+            <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+            <a href="/data_dokter" class="btn btn-secondary btn-sm">Kembali</a>
             </form>
             @endsection
             <!-- <div class="mb-3">
