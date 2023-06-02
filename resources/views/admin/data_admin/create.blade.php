@@ -1,38 +1,25 @@
 @extends('sb-admin/app')
-@section('title', 'Data Dokter')
+@section('title', 'Data Admin')
 
 @section('content')
   <!-- Page Heading COBAKK -->
-  <h1 class="h3 mb-4 text-gray-800">Data Dokter</h1>
+  <h1 class="h3 mb-4 text-gray-800">Data Admin</h1>
 
-  <form action = "/data_dokter" method="POST" enctype="multipart/form-data">
+  <form action = "/data_admin" method="POST">
             @csrf
             <div class="mb-3">
-              <label for="Photo">Photo</label>
-              <input type="file" class="form-control" id="Photo" name="Photo"  value="{{old('Photo')}}">
-              @error('Photo')
+              <label for="exampleInputEmail1">Nama Admin</label>
+              <input type="text" class="form-control" id="Admin_Name" name="Admin_Name" value="{{old('Admin_Name')}}">
+              @error('Admin_Name')
                     <small class="text-danger">{{ $message }}</small>
                     @enderror
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1">Nama Dokter</label>
-              <select class="form-control" id="Dokter_Name" name="Dokter_Name" value="{{old('Dokter_Name')}}">
-                <option selected disabled>Pilih Dokter</option>
-                <option>drg. Rendi Firmono, MARS, Sp.Perio</option>
-                <option>drg. Ken Ayu Miranthy, Sp.BMo</option>
-                <option>drg. Inge Paramitha, Sp.Pros</option>
-                <option>drg. Rani Isfandira, Sp.KG</option>
-              </select>
-              @error('Dokter_Name')
-                    <small class="text-danger">{{ $message }}</small>
-               @enderror
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1">Jenis Kelamin</label>
               <select class="form-control" id="Gender" name="Gender" value="{{old('Gender')}}">
                 <option selected disabled>Pilih Jenis Kelamin</option>
-                <option>Male</option>
-                <option>Female</option>
+                <option>Laki-laki</option>
+                <option>Perempuan</option>
               </select>
               @error('Gender')
                     <small class="text-danger">{{ $message }}</small>
@@ -45,21 +32,7 @@
                     <small class="text-danger">{{ $message }}</small>
                     @enderror
             </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1">Layanan</label>
-              <select class="form-control" id="Service" name="Service" value="{{old('Service')}}">
-                <option selected disabled>Pilih Layanan</option>
-                <option>Gum-Lifting</option>
-                <option>Bleaching (Teeth Whitening)</option>
-                <option>Operasi Gigi Bungsu</option>
-                <option>Implan dan Penambalan Gigi</option>
-                <option>Perawatan Kawat Gigi</option>
-                <option>Scalling</option>
-              </select>
-              @error('Service')
-                    <small class="text-danger">{{ $message }}</small>
-                    @enderror
-            </div>
+            
             
             <div class="mb-3">
               <label for="exampleInputEmail1">Nomor Telepon</label>
@@ -69,7 +42,7 @@
                     @enderror
             </div>
             <button type="submit" class="btn btn-primary btn-sm">Tambah</button>
-            <a href="/data_dokter" class="btn btn-secondary btn-sm">Kembali</a>
+            <a href="/data_admin" class="btn btn-secondary btn-sm">Kembali</a>
             </form>
             @endsection
             <!-- <div class="mb-3">

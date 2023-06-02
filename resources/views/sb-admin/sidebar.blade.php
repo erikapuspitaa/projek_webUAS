@@ -52,7 +52,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="/data_dokter">Data Dokter</a>
             <a class="collapse-item" href="/data_pasien">Data Pasien</a>
-            <a class="collapse-item" href="cards.html">Data Admin</a>
+            <a class="collapse-item" href="/data_admin">Data Admin</a>
             
         </div>
     </div>
@@ -64,7 +64,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pengaturan"
         aria-expanded="true" aria-controls="pengaturan">
-        <i class="fas fa-fw fa-wrench"></i>
+        <i class="fas fa-fw fa-users"></i>
         <span>User</span>
     </a>
     <div id="pengaturan" class="collapse" aria-labelledby="headingUtilities"
@@ -83,7 +83,7 @@
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pengaturan"
         aria-expanded="true" aria-controls="pengaturan">
-        <i class="fas fa-fw fa-wrench"></i>
+        <i class="fas fa-fw fa-user-nurse"></i>
         <span>Dokter</span>
     </a>
     <div id="pengaturan" class="collapse" aria-labelledby="headingUtilities"

@@ -5,42 +5,53 @@
   <!-- Page Heading COBAKK -->
   <h1 class="h3 mb-4 text-gray-800">Data Dokter</h1>
 
-  <form action = "/data_dokter/{{$data_dokter->id}}" method="POST" enctype="multipart/
-  ">
+  <form action = "/data_dokter/{{$data_dokter->id}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
-            <div class="mb-3">
-              <label for="Dokter_Name">Nama Dokter</label>
-              <select class="form-control" id="Dokter_Name" name="Dokter_Name" value="{{old('Dokter_Name') ? old('Dokter_Name') : $data_dokter->Dokter_Name}}">
-                <option selected disabled>Pilih Dokter</option>
-                <option>drg. Rendi Firmono, MARS, Sp.Perio</option>
-                <option>drg. Ken Ayu Miranthy, Sp.BMo</option>
-                <option>drg. Inge Paramitha, Sp.Pros</option>
-                <option>drg. Rani Isfandira, Sp.KG</option>
-              </select>
-              @error('Dokter_Name')
-                    <small class="text-danger">{{ $message }}</small>
-               @enderror
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1">Jenis Kelamin</label>
-              <select class="form-control" id="Gender" name="Gender" value="{{old('Gender')}}">
-                <option selected disabled>Pilih Jenis Kelamin</option>
-                <option>Male</option>
-                <option>Female</option>
-              </select>
-              @error('Gender')
-                    <small class="text-danger">{{ $message }}</small>
-                     @enderror
-            </div>
-            <div class="mb-3">
-              <label for="Email_Address">Email</label>
-              <input type="email" class="form-control" id="Email_Address" name="Email_Address" placeholder="Email_Address" value="{{old('Email_Address')? old('Email_Address') : $data_dokter->Email_Address}}">
-              @error('Email_Address')
+            <div class="row">
+              <div class = "col-md-3">
+                <img src="/upload/data_dokter/{{$data_dokter->Photo}}" width="100%" alt="">
+              </div>
+              <div class="col-md-9">
+                <div class="mb-3">
+                  <label for="Photo">Photo</label>
+                  <input type="file" class="form-control" id="Photo" name="Photo"  value="{{old('Photo')}} ? old('Photo') : $data_dokter->Photo}}">
+                  @error('Photo')
                     <small class="text-danger">{{ $message }}</small>
                     @enderror
-            </div>
-            <div class="mb-3">
+                  </div>
+                  <div class="mb-3">
+                    <label for="Dokter_Name">Nama Dokter</label>
+                    <select class="form-control" id="Dokter_Name" name="Dokter_Name" value="{{old('Dokter_Name') ? old('Dokter_Name') : $data_dokter->Dokter_Name}}">
+                      <option selected disabled>Pilih Dokter</option>
+                      <option>drg. Rendi Firmono, MARS, Sp.Perio</option>
+                      <option>drg. Ken Ayu Miranthy, Sp.BMo</option>
+                      <option>drg. Inge Paramitha, Sp.Pros</option>
+                      <option>drg. Rani Isfandira, Sp.KG</option>
+                    </select>
+                    @error('Dokter_Name')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1">Jenis Kelamin</label>
+                    <select class="form-control" id="Gender" name="Gender" value="{{old('Gender')}}">
+                      <option selected disabled>Pilih Jenis Kelamin</option>
+                      <option>Male</option>
+                      <option>Female</option>
+                    </select>
+                    @error('Gender')
+                    <small class="text-danger">{{ $message }}</small>
+                     @enderror
+                    </div>
+                    <div class="mb-3">
+                      <label for="Email_Address">Email</label>
+                      <input type="email" class="form-control" id="Email_Address" name="Email_Address" placeholder="Email_Address" value="{{old('Email_Address')? old('Email_Address') : $data_dokter->Email_Address}}">
+                      @error('Email_Address')
+                      <small class="text-danger">{{ $message }}</small>
+                      @enderror
+                    </div>
+                    <div class="mb-3">
               <label for="exampleInputEmail1">Layanan</label>
               <select class="form-control" id="Service" name="Service" value="{{old('Service')}}">
                 <option selected disabled>Pilih Layanan</option>
@@ -63,8 +74,10 @@
                     <small class="text-danger">{{ $message }}</small>
                     @enderror
             </div>
-            <button type="submit" class="btn btn-primary btn-sm">Edit</button>
-            <a href="/data_dokter" class="btn btn-secondary btn-sm">Kembali</a>
+              
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm mt-3 ml-3 mr-2">Edit</button>
+            <a href="/data_dokter" class="btn btn-secondary btn-sm mt-3">Kembali</a>
             </form>
             @endsection
             <!-- <div class="mb-3">

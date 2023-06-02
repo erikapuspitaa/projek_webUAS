@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileUserController;
 use App\Http\Controllers\Admin;
 /*
@@ -47,12 +48,14 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/data_pasien/{id}/konfirmasi',[PasienController::class, 'konfirmasi']);
     Route::get('/data_dokter/{id}/konfirmasi',[DokterController::class, 'konfirmasi']);
+    Route::get('/data_admin/{id}/konfirmasi',[DokterController::class, 'konfirmasi']);
     Route::get('/data_pasien/{id}/delete',[PasienController::class, 'delete']);
+    Route::get('/data_dokter/{id}/delete',[DokterController::class, 'delete']);
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     
     Route::resource('/data_pasien',PasienController::class);
     Route::resource('/data_dokter',DokterController::class);
-    
+    Route::resource('/data_admin',AdminController::class);
     
 });
 

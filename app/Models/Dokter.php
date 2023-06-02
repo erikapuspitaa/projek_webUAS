@@ -10,5 +10,5 @@ class Dokter extends Model
     use HasFactory;
 
     protected $table  = 'data_dokter';
-    protected $fillable = ['id','Dokter_Name', 'Gender', 'Email_Address', 'Service', 'Phone_Number'];
+    protected $fillable = ['id','Photo','Dokter_Name', 'Gender', 'Email_Address', 'Service', 'Phone_Number'];
 }
